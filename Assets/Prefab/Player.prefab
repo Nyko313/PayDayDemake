@@ -75,33 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2420a39129b4c8c4598a2dc22dfced8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 0.6
-  runSpeed: 1
-  crouchSpeed: 0.15
-  jumpSpeed: 0.24
-  jumpForce: 4
-  smoothSpeed: 0.2
-  slopeFallSpeed: 1.5
-  movementFriction: 0.87
-  airFriction: 0.97
-  movementAccelleration: 1
-  crouchAnimationSpeed: 0.3
-  crouchHeight: 1.1
-  standHeight: 1.8
-  isJumping: 0
-  isCrouching: 0
-  isGrounded: 0
-  mouseSensitivity: 20
-  controllerSensitivity: 100
-  maxClampAngle: 90
-  minClampAngle: -90
-  canRotateCamera: 1
-  crouchStandLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  cameraHandler: {fileID: 9148546747282749637}
-  playerBody: {fileID: 422014009342436032}
-  mainCamera: {fileID: 1244650926668905365}
 --- !u!114 &8151931766560196363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +87,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27e0f6bde769f1428248a91f1f571e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseSensitivity: 20
+  controllerSensitivity: 100
+  maxClampAngle: 90
+  minClampAngle: -90
+  canRotateCamera: 1
+  crouchStandLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  cameraHandler: {fileID: 9148546747282749637}
+  playerBody: {fileID: 422014009342436032}
+  mainCamera: {fileID: 1244650926668905365}
 --- !u!114 &1015804066543846486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +110,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56141dfceb2eae478e836fed729e0b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSpeed: 0.8
+  runSpeed: 1.4
+  crouchSpeed: 2
+  jumpSpeed: 0.25
+  movementAccelleration: 0.9
+  jumpForce: 4
+  movementFriction: 0.87
+  airFriction: 0.97
+  crouchAnimationSpeed: 0.3
+  crouchHeight: 1
+  standHeight: 1.8
+  slopeFallSpeed: 2
+  canMove: 1
 --- !u!114 &3871910488658411038
 MonoBehaviour:
   m_ObjectHideFlags: 0
