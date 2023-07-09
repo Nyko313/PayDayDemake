@@ -2,7 +2,7 @@
     "name": "FPSInputs",
     "maps": [
         {
-            "name": "Movement",
+            "name": "Player",
             "id": "dc694eaa-f946-40fc-8355-9c53296efa7b",
             "actions": [
                 {
@@ -56,7 +56,7 @@
                     "id": "cd371393-89f1-42b5-8837-87a89d3389c0",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(pressPoint=0.1)",
+                    "interactions": "Press(pressPoint=0.1,behavior=2)",
                     "initialStateCheck": true
                 },
                 {
@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "SwitchWeapon",
+                    "type": "Button",
+                    "id": "7e0384ea-41c2-4314-acbf-7244fb7f5d0d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -331,6 +340,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Reload",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1a2bc6cc-a3f5-46e0-ae6a-f5d72014d0f1",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SwitchWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3b8b163d-f1d4-4346-a4e9-5ae880f4dbbd",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SwitchWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

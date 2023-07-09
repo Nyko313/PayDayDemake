@@ -11,6 +11,7 @@ namespace Niko313.PayDayDemake.Player
         public CharacterController CharacterController { get; private set; }
         public PlayerInput PlayerInput { get; private set; }
         public WeaponController WeaponController { get; private set; }
+        public AudioSource AudioSource { get; private set; }
 
 
         private void Awake()
@@ -31,7 +32,6 @@ namespace Niko313.PayDayDemake.Player
 
         private void FixedUpdate()
         {
-            FixedUpdateComponents();
         }
 
         private void SetupComponents()
@@ -41,6 +41,7 @@ namespace Niko313.PayDayDemake.Player
             FPMovement = GetComponent<FPMovement>();
             FPCameraLook = GetComponent<FPCameraLook>();
             WeaponController = GetComponent<WeaponController>();
+            AudioSource = gameObject.GetComponent<AudioSource>();
         }
 
         private void InitializeComponents()
@@ -53,14 +54,9 @@ namespace Niko313.PayDayDemake.Player
 
         private void UpdateComponents()
         {
-            FPMovement.UpdateComponent();
             FPCameraLook.UpdateComponent();
         }
 
-        private void FixedUpdateComponents()
-        {
-            FPMovement.FUpdateComponent();
-        }
     }
 
 }
