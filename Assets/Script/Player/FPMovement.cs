@@ -97,7 +97,7 @@ namespace Niko313.PayDayDemake.Player
             camPos.y = characterController.height - camHeightOffset;
             player.FPCameraLook.CameraHandler.transform.localPosition = camPos;
         }
-        public void UpdateComponent()
+        public void Update()
         {
 
             // Check if the player is still jumping
@@ -107,7 +107,7 @@ namespace Niko313.PayDayDemake.Player
             }
         }
 
-        public void FUpdateComponent()
+        public void FixedUpdate()
         {
             if (CanMove)
             {
