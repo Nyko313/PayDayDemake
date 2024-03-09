@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Niko313.PayDayDemake.Player
 {
@@ -14,6 +15,10 @@ namespace Niko313.PayDayDemake.Player
 
         private RaycastHit shootHit;
 
+        private bool triggerPressed;
+
+        private float shootTimer;
+
 
         private PlayerController player;
         #region Loop Methods
@@ -21,15 +26,19 @@ namespace Niko313.PayDayDemake.Player
         {
             this.player = player;
         }
+
+        public void UpdateComponent()
+        {
+            shootTimer += Time.deltaTime;
+        }
         #endregion
 
         #region Private
         private void Shoot()
         {
-            if(currentWeapon.Ammo > 0)
+            if(currentWeapon.Ammo > 0 && shootTimer > currentWeapon.FireRate)
             {
                 ShootRaycast(player.FPCameraLook.CameraHandler.transform.forward);
-                Debug.Log(shootHit);
             }
         }
 
@@ -40,11 +49,19 @@ namespace Niko313.PayDayDemake.Player
         #endregion
 
         #region Input
-        private void OnShoot()
+        private void OnShoot(InputValue value)
         {
-            if(canShoot)
+            if (value.isPressed && canShoot)
             {
-                Shoot();
+                if (currentWeapon.IsAutomatic || triggerPressed == false )
+                {
+                    triggerPressed = true;
+                    Shoot();
+                }
+            }
+            else
+            {
+                triggerPressed = false;
             }
         }
         #endregion
